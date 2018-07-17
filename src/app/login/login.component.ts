@@ -1,20 +1,6 @@
   import { Component, OnInit } from '@angular/core';
 import { User, UserComponent } from '../user/user.component';
-import { RouterModule, Routes } from '@angular/router';
-
-const appRoutes: Routes = [
-  {
-    path: 'users',
-    component: UserComponent,
-    data: { title: 'All Users' }
-  },
-  { path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  // { path: '**', component: PageNotFoundComponent }
-];
-
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -31,12 +17,13 @@ export class LoginComponent implements OnInit {
   // };
 model: any = {};
 
-constructor() {
+constructor(private router: Router) {
 }
 myClickFunction() {
     if (this.model.username == 'r' && this.model.password== 'a')
    {
-     
-}
+     debugger;
+      this.router.navigate(['/user']);
+   }
 }
 }
