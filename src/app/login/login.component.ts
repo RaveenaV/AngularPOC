@@ -24,6 +24,7 @@ myClickFunction() {
    {
      debugger;
       this.router.navigate(['/user']);
+
    }
 }
 }
