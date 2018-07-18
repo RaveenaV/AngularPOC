@@ -7,19 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponentComponent } from './page-not-found-component/page-not-found-component.component';
 import { AppRoutingModule } from './/app-routing.module';
-
-const appRoutes: Routes = [
-  {
-    path: 'users',
-    component: UserComponent,
-    data: { title: 'All Users' }
-  },
-  { path: '',
-    redirectTo: '/login',
-    pathMatch: 'full'
-  },
-  // { path: '**', component: PageNotFoundComponent }
-];
+import {HttpClientModule} from '@angular/common/http';
+import {HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -29,9 +18,11 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule
     ,FormsModule
-    ,RouterModule, AppRoutingModule
+    ,RouterModule, AppRoutingModule,
+    HttpClientModule
+    ,HttpModule
   ],
   providers: [],
-  bootstrap: [UserComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
