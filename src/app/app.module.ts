@@ -9,18 +9,29 @@ import { PageNotFoundComponentComponent } from './page-not-found-component/page-
 import { AppRoutingModule } from './/app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
+import { HomeComponent } from './home/home.component';
+import { MessageComponent } from './message/message.component';
+import { InMemoryDataService }  from './in-memory-data.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent,  LoginComponent, PageNotFoundComponentComponent
+    UserComponent,  
+    LoginComponent, 
+    PageNotFoundComponentComponent,
+     HomeComponent,
+     MessageComponent
   ],
   imports: [
     BrowserModule
     ,FormsModule
     ,RouterModule, AppRoutingModule,
     HttpClientModule
-    ,HttpModule
+    ,HttpModule,
+    HttpClientInMemoryWebApiModule.forRoot(
+      InMemoryDataService, { dataEncapsulation: false }
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

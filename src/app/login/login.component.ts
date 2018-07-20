@@ -23,8 +23,7 @@ myClickFunction() {
     if (this.model.username == 'r' && this.model.password== 'a')
    {
      debugger;
-      this.router.navigate(['/user']);
-
+      this.router.navigate(['/home']);
    }
 }
 }

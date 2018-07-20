@@ -4,13 +4,15 @@ import {UserService} from '../user.service';
 export class User {
   id:number;
   username: string;
-  password: string;
+  contact: string;
+  address : string;
+  profilepic : string; 
 }
 
 export const AllUsers: User[] = [
-  {id:1, username:'Raveena', password:'R' },
-  {id:2,  username: 'Narco', password:'N' },
-  { id:3,username: 'Bombasto', password :'B' }
+  {id:1, username:'Raveena', contact:'1234', address:'Hyd',profilepic:''},
+  {id:2,  username: 'Narco', contact:'12345',address:'Hyd',profilepic:'' },
+  { id:3,username: 'Bombasto', contact:'12346',address:'Hyd',profilepic:''}
 ];
 @Component({
   selector: 'app-user',
@@ -21,14 +23,18 @@ export const AllUsers: User[] = [
 export class UserComponent implements OnInit {
   user = User;
   Users = AllUsers; 
+  showMessageBox = true;
+  selectedUser:User;
   constructor(private userService: UserService) {
-   
+    this.showMessageBox = true;
    }
 
   ngOnInit() {
     this.userService.getUsers().subscribe(users =>this.Users = users);
   }
   onSelect(user: User): void {
-    alert(this.user);
+    this.selectedUser = user;
+    debugger;
+    // this.showMessageBox = !this.showMessageBox;
   }
 }

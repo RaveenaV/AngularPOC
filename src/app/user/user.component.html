@@ -1,18 +1,50 @@
-
-<h2>All Users</h2>
-<ul class="Users">
-  <li *ngFor="let user of Users" (click)="onSelect(user)">
-    <span class="badge">{{user.id}}</span> {{user.username}}
-    <div *ngIf="user">
-      <h2>{{user.username}} Details</h2>
-      <div><span>id: </span>{{user.id}}</div>
-      <div>
+<div class="container">
+<h2>Yaariyon</h2>
+<!-- <ul class= "Users list-group"> -->
+  <!-- <div class="list-group-item" *ngFor="let user of Users" (click)="onSelect(user)"> -->
+    <!-- <span class="badge">{{user.id}}</span> {{user.username}} -->
+    <!-- <div *ngIf="user"> -->
+      <!-- <h4 class="list-group-item-heading">{{user.username}}</h4>
+      <div class="list-group-item-text"><span>id: </span>{{user.id}}</div> -->
+      <!-- <div>
         <label>name:
           <input [(ngModel)]="user.username" placeholder="name">
         </label>
-      </div>
-    </div>
-  </li>
-</ul>
+      </div> -->
 
+      <table class="table table-filter">
+        <tbody>
+          <tr *ngFor ="let user of Users" (click)="onSelect(user)">
+            <td>
+              <div class="ckbox"> 
+                <input type="checkbox" id="checkbox1">
+                <label for="checkbox1"></label>
+              </div>
+            </td>
+            <td>
+              <div class="media">
+                <a href="#" class="pull-left">
+                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                </a>
+                <div class="media-body" style="padding: 20px">
+                  <h4 class="title">
+                    {{user.username}}
+                  </h4>
+                  <p class="summary">Id : {{user.id}}</p>
+                  <p class="summary">Contact : {{user.contact}}</p>
+                  <p class="summary">Address : {{user.address}}</p>
+                </div>
+              </div>
+            </td>
+           
+          </tr>
+        </tbody>
+      </table>
+    <!-- </div> -->
+  <!-- </div> -->
+  <div *ngIf ="selectedUser">
+      <app-message [user]="selectedUser" >
+      </app-message>
+  </div>
+</div>
 
