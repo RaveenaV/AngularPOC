@@ -13,6 +13,8 @@ import { HomeComponent } from './home/home.component';
 import { MessageComponent } from './message/message.component';
 import { InMemoryDataService }  from './in-memory-data.service';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     LoginComponent, 
     PageNotFoundComponentComponent,
      HomeComponent,
-     MessageComponent
+     MessageComponent,
+     WelcomeComponent,
+     RegisterComponent
   ],
   imports: [
     BrowserModule

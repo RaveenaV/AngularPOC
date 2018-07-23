@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../user.service';
+import {UserService} from '../_service/user.service';
 
 export class User {
   id:number;
@@ -30,11 +30,10 @@ export class UserComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.userService.getUsers().subscribe(users =>this.Users = users);
+    this.userService.getUsers();
   }
   onSelect(user: User): void {
-    this.selectedUser = user;
-    debugger;
+    this.selectedUser = user; 
     // this.showMessageBox = !this.showMessageBox;
   }
 }

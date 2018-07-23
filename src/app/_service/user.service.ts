@@ -32,8 +32,10 @@ export class UserService {
     this.apiUrl="http://localhost:4323/"
   }
 
-  Login(userName: string, password: string){ 
+  Login(userName: string, password: string): User{ 
     // return this.httpClient.post(this.apiUrl+'User/authenticate',{userName: userName, Password: password}) 
+
+    return this.AllUsers.filter(u=>u.username== userName && u.password==password)[0];
   }
 
   Register(newUser: User){ 

@@ -1,3 +1,16 @@
+
+ 
+    <div  > 
+        <ul class="nav navbar-nav" routerLinkActive="active">
+                <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li>
+                <li class="nav-item" *ngIf="!IsUsedLoggedIn()"><a class="nav-link" routerLink="login">Login</a></li>
+                <li class="nav-item" *ngIf="!IsUsedLoggedIn()"><a class="nav-link" routerLink="register">Register</a></li>
+            
+        </ul>
+        &nbsp; {{currentUser?.username}}&nbsp;
+        <button type="button" *ngIf="IsUsedLoggedIn()" class="btn btn-success" (click)="LogOut();">logout</button>
+    </div>
+ 
 <router-outlet></router-outlet>
 
 

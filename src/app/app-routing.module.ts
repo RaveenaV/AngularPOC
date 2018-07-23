@@ -4,6 +4,8 @@ import { UserComponent } from './user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -17,9 +19,18 @@ const routes: Routes = [
     data: { title: 'All Users' }
   },
   { path: '',
-   component: LoginComponent,
+   component: WelcomeComponent,
     pathMatch: 'full'
   },
+  {
+    path: 'login',
+    component: LoginComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
+  }
   // { path: '**', component: PageNotFoundComponent }
 ];
 

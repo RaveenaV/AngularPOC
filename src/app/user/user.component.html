@@ -12,39 +12,47 @@
         </label>
       </div> -->
 
-      <table class="table table-filter">
-        <tbody>
-          <tr *ngFor ="let user of Users" (click)="onSelect(user)">
-            <td>
-              <div class="ckbox"> 
-                <input type="checkbox" id="checkbox1">
-                <label for="checkbox1"></label>
-              </div>
-            </td>
-            <td>
-              <div class="media">
-                <a href="#" class="pull-left">
-                  <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
-                </a>
-                <div class="media-body" style="padding: 20px">
-                  <h4 class="title">
-                    {{user.username}}
-                  </h4>
-                  <p class="summary">Id : {{user.id}}</p>
-                  <p class="summary">Contact : {{user.contact}}</p>
-                  <p class="summary">Address : {{user.address}}</p>
-                </div>
-              </div>
-            </td>
-           
-          </tr>
-        </tbody>
-      </table>
+    
     <!-- </div> -->
   <!-- </div> -->
-  <div *ngIf ="selectedUser">
-      <app-message [user]="selectedUser" >
-      </app-message>
-  </div>
+  
 </div>
 
+<div class="wrapper">
+  <div id="one" >
+    <table class="table table-filter">
+      <tbody>
+        <tr *ngFor ="let user of Users" (click)="onSelect(user)">
+          <td>
+            <div class="ckbox"> 
+              <input type="checkbox" id="checkbox1">
+              <label for="checkbox1"></label>
+            </div>
+          </td>
+          <td>
+            <div class="media">
+              <a href="#" class="pull-left">
+                <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+              </a>
+              <div class="media-body" style="padding: 20px">
+                <h4 class="title">
+                  {{user.username}}
+                </h4>
+                <p class="summary">Id : {{user.id}}</p>
+                <p class="summary">Contact : {{user.contact}}</p>
+                <p class="summary">Address : {{user.address}}</p>
+              </div>
+            </div>
+          </td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div id="two" *ngIf ="selectedUser">
+    
+      <app-message [user]="selectedUser" >
+      </app-message>
+  
+  </div>
+</div>
